@@ -1,3 +1,6 @@
+# logistic regression with gradient descent and line search
+# Barty
+
 import sys
 import math
 import numpy
@@ -6,12 +9,8 @@ def sigmoid(x) :
     return 1.0 / (1 + numpy.exp(-x))
 
 def L(x, y, weights) :
-#    print x
-#    print y
-#    print weights
     m, n = numpy.shape(x)
     xx = x * weights
-#    print xx
     ret = 0
     for i in range(m) :
         ret = ret + xx[i][0] * y[i][0] - math.log(1 + math.exp(xx[i][0]))
