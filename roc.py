@@ -8,7 +8,7 @@ if __name__ == "__main__" :
     i = 0.
     x = []
     y = []
-    tot = 0
+    tot = 1
     while i <= 1 :
         tp = 0; fp = 0; fn = 0; tn = 0; p = 0
         fin = open(sys.argv[1])
@@ -33,9 +33,14 @@ if __name__ == "__main__" :
         y.append(fp)
         i = i + width
         tot = tot + 1
+    x.append(0)
+    y.append(0)
     for i in range(tot) :
         x[i] = x[i] * 1. / p
         y[i] = y[i] / 100000.
-    plt.plot(x, y, 'ro')
-    plt.axis([0, 1, 0, 1])
+    plt.plot(x, y)
+    plt.axis([0,1,0,1])
+    plt.xlabel('TPR')
+    plt.ylabel('FPR')
+    plt.title('ROC curve')
     plt.show()

@@ -1,6 +1,7 @@
 import sys
 import math
 import matplotlib.pyplot as plt
+import matplotlib.lines as lines
 
 if __name__ == "__main__" :
     n = 100000
@@ -32,6 +33,11 @@ if __name__ == "__main__" :
         y.append(tp * 1. / (tp + fn))
         i = i + width
         tot = tot + 1
-    plt.plot(x, y, 'ro')
-    plt.axis([0, 1, 0, 1])
+#    x.append(1)
+#    y.append(0)
+    plt.plot(x, y)
+    plt.axis([0,1,0,1])
+    plt.xlabel('precision')
+    plt.ylabel('recall')
+    plt.title('PR curve')
     plt.show()
