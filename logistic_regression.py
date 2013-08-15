@@ -17,7 +17,7 @@ def L(x, y, weights) :
     return ret
 
 
-def gd(iptx, ipty) :
+def gd(x, y) :
     m, n = numpy.shape(x)
     times = 0
     weights = numpy.ones((n, 1))
